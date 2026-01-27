@@ -1,0 +1,110 @@
+/* 1. Pehle variables banayein (Ye light mode hai) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #f9f9f9;
+}
+
+/* 2. Dark Mode ke colors (Jab button dabega) */
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --card-bg: #1e1e1e;
+}
+/* Ye header aur nav ko dark mode mein black karega */
+.dark-mode header {
+    background: #1a1a1a !important;
+}
+
+.dark-mode nav {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark-mode footer {
+    background: #000 !important;
+}
+
+/* 3. Ab in variables ko poori website par apply karein */
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    transition: 0.3s ease; /* Isse jhatka nahi lagega, smooth color change hoga */
+}
+
+/* 4. Aapke articles/cards ke liye */
+.card, div[style*="border"] { 
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Poori website ka design */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Bas ye line badalni hai */
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+
+
+
+
+header {
+    background: #2563eb;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 10px; }
+p { font-size: 1.2rem; line-height: 1.6; }
+
+
+/* Card Look aur Hover Effect (Uthne wala effect) */
+.container div {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth banane ke liye */
+    border: 1px solid transparent;
+}
+
+/* Jab ungli ya mouse box par jaye */
+.container div:hover {
+    transform: translateY(-8px); /* Box thoda upar uthega */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    border-color: #2563eb; /* Border blue ho jayega */
+}
+/* Dark Mode mein Header, Nav aur Footer ko black karne ke liye */
+.dark-mode header {
+    background: #1a1a1a !important;
+}
+
+.dark-mode nav {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark-mode footer {
+    background: #000 !important;
+}
+
+/* Dark mode mein cards (articles) ka color sahi karne ke liye */
+.dark-mode .container div {
+    background: #1e1e1e !important;
+    border-color: #333 !important;
+    color: white !important;
+}
