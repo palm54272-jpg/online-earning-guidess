@@ -3,136 +3,367 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechAI Blog - Home</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>ONLYK | Tech & Performance Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --do-blue: #0069ff;
+            --dark-navy: #001e44;
+            --pure-white: #ffffff;
+            --text-gray: #4a5568;
+            --light-gray: #f8fafc;
+        }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="TechAI Blog - Best AI tools, Mobile Coding and Dropshipping guide by a Delhi based student. Learn to earn $500/month.">
-    <meta name="keywords" content="AI tools, Mobile Coding, Earn Money Online India, Dropshipping India, Delhi Powerlifter Blog">
-    <meta name="author" content="Your Name">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <title>TechAI Blog - Home</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--pure-white);
+            color: var(--text-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--pure-white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--dark-navy);
+            letter-spacing: -1px;
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: var(--dark-navy);
+            border-radius: 3px;
+        }
+
+        /* Hero Section */
+        header {
+            padding: 100px 10% 80px;
+            text-align: left;
+            max-width: 1200px;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 800;
+            color: var(--dark-navy);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 48px; }
+            header { padding: 60px 5% 40px; }
+        }
+
+        /* Blog Grid */
+        .container {
+            padding: 0 10% 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: var(--pure-white);
+            transition: transform 0.3s ease;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category {
+            color: var(--do-blue);
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: var(--dark-navy);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 20px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--do-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-block;
+            transition: gap 0.2s;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--light-gray);
+            padding: 80px 10% 40px;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--dark-navy);
+            font-weight: 600;
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #718096;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
+            .grid { grid-template-columns: 1fr; }
+            p { font-size: 18px; }
+            h2 { font-size: 28px; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
- <button id="dark-mode-toggle">🌙 Dark Mode</button>
- 
-    <h1>TechAI Blog</h1>
-    <p>AI Tools, Online Earning & Tech Reviews</p>
-    <nav style="margin-top: 15px; background: rgba(0,0,0,0.1); padding: 10px;">
-        <a href="index.html" style="color: white; margin: 0 10px; text-decoration: none; font-weight: bold;">Home</a>
-        <a href="about.html" style="color: white; margin: 0 10px; text-decoration: none; font-weight: bold;">About</a>
-        <a href="contact.html" style="color: white; margin: 0 10px; text-decoration: none; font-weight: bold;">Contact</a>
+    <nav>
+        <div class="logo">ONLYK</div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
+
+    <header style="padding: 60px 8% 40px; text-align: left; background: #ffffff;">
+    <h1 style="font-size: 38px; font-weight: 800; color: #001e44; line-height: 1.2; letter-spacing: -1.5px; margin: 0;">
+        Engineering a <br>
+        <span style="color: #0069ff;">Digital Empire.</span>
+    </h1>
+
+    <p style="font-size: 18px; color: #4a5568; margin-top: 12px; max-width: 90%; line-height: 1.5; font-family: 'Inter', sans-serif;">
+        Mastering AI, Tech, and Global Strategy.
+    </p>
 </header>
 
-    <main class="container">
-        <h2 style="color: #333; border-bottom: 2px solid #2563eb; display: inline-block;">Latest Articles 🚀</h2>
-        
-        <div style="border: 1px solid #ddd; padding: 20px; margin-top: 20px; border-radius: 8px; text-align: left; background: #fff;">
-            <h3 style="color: #2563eb; margin-top: 0;">1. Top 5 AI Tools for 2026</h3>
-           <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=500" style="width: 100%; border-radius: 12px; margin: 15px 0; height: 220px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" alt="AI Earning Tools">
- 
 
-            <p>Bhai, AI se kaam asan karo! In tools ka use karke aap apna kaafi time bacha sakte ho.</p>
-            <a href="ai-tools.html" style="color: #2563eb; font-weight: bold; text-decoration: none;">Read More →</a>
-
-        </div>
-
-        <div style="border: 1px solid #ddd; padding: 20px; margin-top: 20px; border-radius: 8px; text-align: left; background: #fff;">
-            <h3 style="color: #2563eb; margin-top: 0;">2. Online Earning with Dropshipping</h3>
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=500" style="width: 100%; border-radius: 10px; margin: 15px 0; height: 220px; object-fit: cover;" alt="Dropshipping Business">
-
-            <p>India se export karke dollars mein kaise kamaye? Pura tarika yahan dekho.</p>
-            <a href="dropshipping.html" style="color: #2563eb; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 15px;">Read the Full Export Guide →</a>
-
-        </div>
-        <div style="padding: 20px; border-radius: 12px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; background: #fff;">
-    <h3 style="color: #2563eb; margin-top: 0;">3. Top 5 Coding Apps for Mobile</h3>
-    <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=500" style="width: 100%; border-radius: 10px; margin: 15px 0; height: 200px; object-fit: cover;" alt="Mobile Coding">
-
-    <p>Bhai, agar laptop nahi hai toh tension mat lo. In apps se aap mobile par hi pro coding seekh sakte ho!</p>
-    <a href="coding-apps.html" style="color: #2563eb; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 15px;">Explore Best Coding Apps →</a>
-
-</div>
-
-<div style="padding: 20px; border-radius: 12px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; background: #fff;">
-    <h3 style="color: #2563eb; margin-top: 0;">3. Top 5 Mobile Apps for Full-Stack Development</h3>
-    <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=500" style="width: 100%; border-radius: 10px; margin: 15px 0; height: 200px; object-fit: cover;" alt="Development">
-
-    <p>Agar aapke paas PC nahi hai toh ruko mat! 2026 mein mobile coding apps itni advanced ho gayi hain ki aap poora backend aur frontend wahan handle kar sakte ho.</p>
-    <ul style="padding-left: 20px; color: #555;">
-        <li><b>Acode:</b> Jo aap abhi use kar rahe ho, HTML/CSS ke liye best hai.</li>
-        <li><b>Termux:</b> Isse aap apne mobile ko Linux terminal bana sakte ho.</li>
-        <li><b>Replit:</b> Cloud par coding karne ke liye sabse behtareen app.</li>
-    </ul>
-    <p>In apps ka use karke aap Python, JavaScript aur Java seekh sakte ho aur apna portfolio bana sakte ho.</p>
-    <a href="full-stack-guide.html" style="color: #2563eb; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 15px;">View Full-Stack Roadmap →</a>
-
-</div>
-<div style="padding: 20px; border-radius: 12px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; background: #fff;">
-    <h3 style="color: #2563eb; margin-top: 0;">4. How to Earn $500/Month using AI Tools</h3>
-    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=500" style="width: 100%; border-radius: 10px; margin: 15px 0; height: 200px; object-fit: cover;" alt="AI Tech">
-
-    <p>AI sirf maze ke liye nahi hai, ye paise kamane ka ek machine hai. India se export dropshipping aur AI tools ka combination aapko dollars mein earning de sakta hai.</p>
-    <p><b>Kaise start karein?</b> Sabse pehle ChatGPT ya Gemini se content likhwayein, phir Midjourney ya Leonardo AI se images banayein aur unhein freelancing sites par bechein. Aap AI-based video editing service bhi de sakte ho jo aaj kal kafi demand mein hai.</p>
-    <a href="earn-money.html" style="color: #2563eb; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 15px;">Unlock the $500/Month Strategy →</a>
-
-</div>
-<div style="background: linear-gradient(135deg, #2563eb, #1e40af); padding: 30px 20px; border-radius: 15px; margin: 40px 10px; text-align: center; color: white; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);">
-    <h2 style="margin-top: 0;">🇮🇳 Join the TechAI India Community!</h2>
-    <p style="font-size: 16px; opacity: 0.9;">Bhai, daily earning tips aur naye AI tools ki updates ke liye humse judein. Miss mat karna!</p>
     
-    <div style="margin-top: 20px;">
-        <a href="https://t.me/yourusername" style="background: #0088cc; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; margin: 10px; border: 2px solid white;">
-            Join Telegram
-        </a>
-        
-        <a href="https://instagram.com/yourusername" style="background: #f09433; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; margin: 10px; border: 2px solid white;">
-            Follow on Insta
-        </a>
+<div class="heroes-wrapper">
+    <h2 class="section-title">Success Stories</h2>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="hero-card bg-purple">
+                <span class="company-logo">Scribe AI</span>
+                <h3>Mouad Hadji</h3>
+                <p>Head of AI, Scribe</p>
+                <div class="quote">"Scribe serves users globally using DigitalOcean GPUs for seamless scaling."</div>
+            </div>
+
+            <div class="hero-card bg-green">
+                <span class="company-logo">ScraperAPI</span>
+                <h3>Zoltan Bettenbuk</h3>
+                <p>CTO, ScraperAPI</p>
+                <div class="quote">"The cost of running ScraperAPI would be 25% more on AWS compared to this setup."</div>
+            </div>
+
+            <div class="hero-card bg-blue">
+                <span class="company-logo">Elite Power</span>
+                <h3>Arjun Sharma</h3>
+                <p>Pro Powerlifter</p>
+                <div class="quote">"Building a high-performance body in the 83kg class requires precise data and fuel."</div>
+            </div>
+
+            <div class="hero-card bg-purple">
+                <span class="company-logo">IndoExport</span>
+                <h3>Sarah Chen</h3>
+                <p>CEO, IndoExport</p>
+                <div class="quote">"Exporting from India to the US became 10x easier with a decentralized digital stack."</div>
+            </div>
+
+            <div class="hero-card bg-green">
+                <span class="company-logo">Acode Devs</span>
+                <h3>Rohan Mehta</h3>
+                <p>Full-Stack Mobile Developer</p>
+                <div class="quote">"I built a tech empire using nothing but my phone and a vision for the future."</div>
+            </div>
+            
+            <div class="hero-card bg-purple">
+                <span class="company-logo">Scribe AI</span>
+                <h3>Mouad Hadji</h3>
+                <p>Head of AI, Scribe</p>
+                <div class="quote">"Scribe serves users globally using DigitalOcean GPUs for seamless scaling."</div>
+            </div>
+        </div>
     </div>
 </div>
 
-    </main>
+<style>
+    .heroes-wrapper { margin: 60px 0; overflow: hidden; }
+    .section-title { font-size: 32px; color: var(--dark-navy); margin-bottom: 30px; }
+
+    /* Carousel Container */
+    .carousel-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .carousel-track {
+        display: flex;
+        width: calc(300px * 10); /* Adjust based on card count */
+        animation: scroll 25s linear infinite;
+    }
+
+    /* Card Styles */
+    .hero-card {
+        width: 300px;
+        min-height: 400px;
+        margin-right: 20px;
+        padding: 40px 30px;
+        border-radius: 12px;
+        color: white;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .bg-purple { background: linear-gradient(135deg, #a855f7, #7c3aed); }
+    .bg-green { background: linear-gradient(135deg, #10b981, #059669); }
+    .bg-blue { background: linear-gradient(135deg, #0069ff, #001e44); }
+
+    .company-logo { font-weight: 800; font-size: 18px; opacity: 0.9; }
+    .hero-card h3 { font-size: 24px; margin-top: 10px; color: #fff; }
+    .hero-card p { font-size: 16px; opacity: 0.8; color: #fff; margin-bottom: 20px; }
+    .quote { font-size: 20px; font-weight: 700; line-height: 1.4; }
+
+    /* Infinite Scroll Animation */
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-320px * 5)); } /* Moves left by 5 cards */
+    }
+
+    /* Pause on hover */
+    .carousel-track:hover { animation-play-state: paused; }
+</style>
 
 
+    <div class="container">
+        <div class="grid">
+            <article class="card">
+                <span class="category">Technology</span>
+                <h2>AI Evolution 2026: GPT-5 Impact</h2>
+                <p>The dawn of GPT-5 has redefined digital entrepreneurship. We explore how autonomous agents are now handling complex supply chains and customer acquisitions with zero human friction.</p>
+                <a href="ai-blog.html" class="read-more">Read More →</a>
+
+
+            </article>
+
+            <article class="card">
+                <span class="category">Fitness</span>
+                <h2>The Powerlifter's Fuel: 83kg Class</h2>
+                <p>Performance starts in the kitchen. Master the 83kg weight class with a precision-engineered diet of eggs, oats, and black chickpeas to maximize your squat and deadlift volume.</p>
+                <a href="fitness.html" class="read-more">Read More →</a>
+
+            </article>
+
+            <article class="card">
+                <span class="category">Business</span>
+                <h2>Dropshipping Mastery: India to Global</h2>
+                <p>Stop thinking local. Learn the logistical roadmap to exporting high-demand Indian goods to Western markets, allowing you to scale operations and earn in USD.</p>
+                <a href="dropshipping.html" class="read-more">Read More →</a>
+            </article>
+
+            <article class="card">
+                <span class="category">Development</span>
+                <h2>Mobile Coding: The Acode Revolution</h2>
+                <p>Who says you need a workstation? Discover how the next generation of full-stack developers are building and deploying massive tech empires directly from mobile IDEs.</p>
+                <a href="acode-revolution.html" class="read-more">Read More →</a>
+            </article>
+
+            <article class="card">
+                <span class="category">Security</span>
+                <h2>Decentralized Cybersecurity Trends</h2>
+                <p>In a world of decentralized finance and storage, protecting your digital assets requires a new breed of encryption. Learn to harden your stacks against 2026 threats.</p>
   
+    <a href="cybersecurity.html" class="read-more">Read More →</a>
 
-    <footer style="background: #333; color: white; padding: 20px; margin-top: 40px; text-align: center;">
-        <p>&copy; 2026 TechAI Blog | Made with ❤️ in Delhi</p>
-        <div style="margin-top: 10px;">
-            <a href="#" style="color: #2563eb; margin: 0 10px; text-decoration: none;">Instagram</a>
-            <a href="#" style="color: #2563eb; margin: 0 10px; text-decoration: none;">YouTube</a>
+
+            </article>
+
+            <article class="card">
+                <span class="category">Monetization</span>
+                <h2>AdSense Approval Roadmap</h2>
+                <p>Getting your blog approved for AdSense doesn't have to be a mystery. Follow our strict compliance checklist to ensure your site is monetized from day one.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
         </div>
+    </div>
+    
+        <footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="contact.html" style="text-decoration: none; color: #001e44; font-weight: 600; font-size: 18px;">Contact Us</a>
+    </div>
+    <p class="copyright">© 2026 ONLYK Digital. All rights reserved.</p>
+</footer>
+
+        
     </footer>
-
-    <script>
-        const toggleBtn = document.getElementById('dark-mode-toggle');
-        const body = document.body;
-
-        toggleBtn.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            // Button ka text badalne ke liye
-            if (body.classList.contains('dark-mode')) {
-                toggleBtn.innerText = "☀️ Light Mode";
-            } else {
-                toggleBtn.innerText = "🌙 Dark Mode";
-            }
-        });
-    </script>
 
 </body>
 </html>
-
